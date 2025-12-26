@@ -1,3 +1,5 @@
+# Variables
+
 ## What is immutable variable
 * Immutable means unchangeable. Once a value is defined, it can't be changed.
 * In Rust, variables are immutable by default.
@@ -55,7 +57,8 @@ let x = 5;
 let x = "hello";
 ```
 
-# Q&A
+##
+## Q&A
 ### Can one immutable variable copy the value of another?
 Yes
 ```
@@ -84,3 +87,23 @@ println!("The value of x is: {x}");
 No, the code does not compile, because immutable variable **x** cannot be reassigned
 ### Is constants can mutable in rust?
 No, Constants are always immutable.
+### How does variable shadowing work across scopes (means a block of code) in Rust?
+```
+// creates a new variable
+let x = 5;
+
+// scope start
+{
+    // creates a new shadowed x using the outer x (5)
+    let x = x + 1;
+
+    // prints 6
+    println!("The value of x in the inner scope is: {x}");
+}
+// scope end
+// When that scope is over,
+// the inner x is dropped; the outer x (still 5) is visible again
+println!("The value of x is: {x}");
+
+```
+* We can’t use a variable declared in an inner scope outside that scope, because once the scope finishes executing, the variable is destroyed.
