@@ -27,7 +27,7 @@ Depend on the architecture |isize
 
 **Formula to calculate the range of a signed integer**  
 $$\text{ from } -2^{n-1} \text{ to } 2^{n-1} - 1$$
-**n** is the number of bits. So, an **i8** can store from -128 t0 127
+**n** is the number of bits. So, an **i8** can store from -128 to 127
 $$\text{ from }-2^{8-1} = -2^7 = -128\text{ to }2^{8-1} - 1 = 2^7 - 1 = 128 - 1 = 127$$
 #### 2) Unsigned
 Represent only non-negative numbers (0 and positive)
@@ -42,12 +42,8 @@ Depend on the architecture |usize
 **usize** depend on the architecture of the computer where your program is running. It will be 64-bits if you’re on a 64-bit architecture and will be 32-bits if you’re on a 32-bit architecture
 
 **Formula to calculate the range of a unsigned integer**  
-$$
-\text{ from } 0 \text{ to } 2^n - 1
-$$
-**n** is the number of bits. So, an **u8** can store from 0 t0 255
-$$
-2^8 - 1 = 256 - 1 = 255
-$$
+$$\text{ from } 0 \text{ to } 2^n - 1$$
+**n** is the number of bits. So, an **u8** can store from 0 to 255
+$$2^8 - 1 = 256 - 1 = 255$$
 
 
