@@ -12,7 +12,7 @@ In rust scalar type represnt single value. Rust has four scalar type:
 4) Character
 
 ### Integer
-An integer is a number without a fractional part. Integer has two types:
+An integer is a number without a decimal point. Integer has two types:
 #### 1) Signed
 Represent both positive and negative numbers
 Length|Types
@@ -50,4 +50,84 @@ $$\text{ from } 0 \text{ to } 2^n - 1$$
 So, an **u8** can store from 0 to 255  
 $$2^8 - 1 = 256 - 1 = 255$$
 
+#### Example
+```
+let x: i32 = 5;
+```
 
+### Floating-point
+Floating-point is number with decimal point
+Length|Types
+-|-
+32-bit|f32
+64-bit|f64
+
+#### Example
+```
+let x: f32 = 5.2;
+```
+
+### Boolean
+In rust boolean type has two possible values: **true** and **false**. Booleans are one byte in size. 
+#### Example
+```
+let f: bool = false;
+```
+Boolean values are mainly used in conditionals, like an if statement
+
+### Character
+In Rust, A char is written using single quotes **' '**
+```
+let a: char = 'a';
+let heart_eyed_cat: char = '😻';
+```
+Rust **char** type is 4 bytes in size and represents a Unicode scalar value, means 
+* You see an English letter: 'a'
+* But rust sees a Unicode number: U+0061 (unicode number of a)
+
+That’s why Rust char can represent not only English letters, but also accented letters, Chinese, Japanese, and Korean characters, emojis, and even zero-width spaces.
+
+## Compound
+Rust has two compound type: 
+1) Tuple
+2) Array
+
+### Tuple
+Using a tuple, we can group multiple values into a single compound type, where each value may have a different type. For example:
+```
+let tup: (i32, f64, u8) = (500, 6.4, 1);
+```
+* **(i32, f64, u8)** is one type. It is a tuple type
+* Inside that single tuple type have multiple values. Each value can have a different type
+
+Tuples have a fixed length: Once declared at compile time, they cannot grow or shrink in size. For example:
+```
+let tup: (i32, f64, u8) = (500, 6.4, 1);
+```
+* The tuple **tup** has 3 elements
+* Its type is **(i32, f64, u8)**
+* You cannot add or remove elements after it is created
+
+you can get values from a tuple in two ways:
+#### 1) Using destructuring (pattern matching)
+Unpack the tuple into individual variables
+```
+let tup: (i32, f64, u8) = (500, 6.4, 1);
+
+let (x, y, z) = tup; // destructuring
+
+println!("x = {x}");
+println!("y = {y}");
+println!("z = {z}");
+```
+Each variable gets the corresponding value from the tuple
+
+#### 2) Using index
+You can also access tuple values using their index
+```
+let tup: (i32, f64, u8) = (500, 6.4, 1);
+
+println!("First value: {}", tup.0);
+println!("Second value: {}", tup.1);
+println!("Third value: {}", tup.2);
+```
