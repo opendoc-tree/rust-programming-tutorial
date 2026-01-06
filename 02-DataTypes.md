@@ -131,3 +131,33 @@ println!("First value: {}", tup.0);
 println!("Second value: {}", tup.1);
 println!("Third value: {}", tup.2);
 ```
+
+### Array
+* An array is a collection of multiple values.
+* Every element of an array must have the same type.
+* In Rust, arrays have a fixed length, which means once an array is initialized, you cannot add or remove elements.
+
+Example:
+```
+let a: [i32; 5] = [1, 2, 3, 4, 5];
+```
+* **i32** is the type of each element.
+* **5** is the length of the array, which means this array can contain 5 elements.
+
+You can initialize an array to cantaint same value like this:
+```
+let a = [3;5]
+```
+This is equivalent to:
+```
+let a = [3, 3, 3, 3, 3];
+```
+#### How to access array element:
+You can access elements of an array using indexing, like this:
+```
+let a: [i32; 5] = [1, 2, 3, 4, 5];
+println!("1st element = {}",a[0]);
+println!("2nd element = {}",a[1]);
+```
+
+
