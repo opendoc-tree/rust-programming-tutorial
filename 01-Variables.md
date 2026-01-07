@@ -87,7 +87,7 @@ println!("The value of x is: {x}");
 No, the code does not compile, because immutable variable **x** cannot be reassigned
 ### Is constants can mutable in rust?
 No, Constants are always immutable.
-### How does variable shadowing work across scopes (means a block of code) in Rust?
+### How does variable shadowing work across scopes (block of code) in Rust?
 ```
 // creates a new variable
 let x = 5;
